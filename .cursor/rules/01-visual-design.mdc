@@ -1,0 +1,42 @@
+---
+description: Visual design system for the anniversary invitation
+globs: ["app/**/*.tsx", "src/**/*.tsx", "components/**/*.tsx"]
+alwaysApply: true
+---
+
+Design direction:
+- Premium, elegant, and warm
+- Inspired by classic anniversary stationery, not generic SaaS UI
+- Use generous spacing, soft hierarchy, and refined typography
+- Prefer calm visual rhythm over dense layouts
+- Use tasteful gold accents because this is a 50th anniversary
+
+Recommended palette:
+- Warm ivory or champagne background
+- Deep brown, charcoal, or muted wine text
+- Soft gold accents
+- Optional muted olive, beige, or dusty rose secondary tones
+
+Avoid:
+- Neon colors
+- Purple/blue AI gradients
+- Glassmorphism unless extremely subtle
+- Overused generic cards
+- Random blob backgrounds
+- Excessive shadows
+- “Startup landing page” layout patterns
+
+Typography:
+- Use an elegant serif for names/headings
+- Use a highly readable sans-serif for body text
+- Headings should feel ceremonial
+- Body text should be comfortable for older guests to read
+
+Use visual details intentionally:
+- Thin dividers
+- Floral or ornamental accents if tasteful
+- Subtle paper texture if implemented cleanly
+- Gold linework or border details
+- Large, beautiful couple photo if available
+
+Every section should feel like part of one invitation, not separate website blocks.

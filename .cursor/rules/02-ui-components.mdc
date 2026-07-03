@@ -1,0 +1,37 @@
+---
+description: UI component rules
+globs: ["components/**/*.tsx", "app/**/*.tsx", "src/**/*.tsx"]
+alwaysApply: true
+---
+
+Build reusable components when appropriate:
+- Section
+- Container
+- Button
+- EventDetailCard
+- RSVPButton
+- Gallery
+- TimelineItem
+- LocationSection
+
+Component rules:
+- Use TypeScript
+- Use semantic HTML
+- Keep components small and readable
+- Prefer composition over large monolithic files
+- Use Tailwind CSS for styling
+- Avoid inline styles unless absolutely necessary
+- Do not hardcode repeated values across many components if they should become design tokens
+
+Accessibility:
+- Maintain strong color contrast
+- Use readable font sizes
+- Buttons and links must have clear labels
+- Images must have meaningful alt text
+- Interactive elements must be keyboard accessible
+
+Mobile:
+- Design mobile-first
+- Avoid tiny text
+- Avoid cramped layouts
+- RSVP button should be easy to tap

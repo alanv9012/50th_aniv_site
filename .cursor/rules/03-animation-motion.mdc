@@ -1,0 +1,38 @@
+---
+description: Motion and animation rules inspired by tasteful design engineering
+globs: ["app/**/*.tsx", "src/**/*.tsx", "components/**/*.tsx"]
+alwaysApply: true
+---
+
+Use animation only when it improves emotion, clarity, or perceived quality.
+
+Good uses:
+- Soft hero entrance
+- Gentle photo reveal
+- Smooth section transitions
+- Subtle RSVP button hover/tap feedback
+- Elegant timeline reveal
+- Small ornamental motion, if restrained
+
+Avoid:
+- Bouncy cartoon motion
+- Over-animated text
+- Constant movement
+- Distracting parallax
+- Heavy scroll effects
+- Animations that hurt performance
+
+Motion should feel:
+- Calm
+- Refined
+- Romantic
+- Smooth
+- Premium
+
+Prefer:
+- Short durations
+- Natural easing
+- Opacity + transform animations
+- Respecting reduced motion preferences
+
+Always support prefers-reduced-motion.

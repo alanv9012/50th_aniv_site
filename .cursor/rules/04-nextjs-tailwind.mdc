@@ -1,0 +1,31 @@
+---
+description: Next.js and Tailwind implementation rules
+globs: ["app/**/*.tsx", "src/**/*.tsx", "components/**/*.tsx", "lib/**/*.ts"]
+alwaysApply: true
+---
+
+Use:
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Server components by default
+- Client components only when interactivity is needed
+
+Code quality:
+- Keep files organized
+- Avoid unnecessary dependencies
+- Avoid premature complexity
+- No fake backend unless requested
+- No placeholder lorem ipsum in final sections
+- Use realistic editable content
+
+Performance:
+- Optimize images
+- Avoid heavy animation libraries unless justified
+- Keep the landing page fast on mobile networks
+- Use next/image when possible
+
+SEO:
+- Add useful metadata
+- Use a clear title and description
+- Structure headings properly

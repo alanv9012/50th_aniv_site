@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: oklch(0.985 0.006 82);
+  --color-surface: oklch(0.968 0.01 80);
+  --color-surface-deep: oklch(0.94 0.014 78);
+  --color-ink: oklch(0.27 0.042 36);
+  --color-ink-muted: oklch(0.44 0.028 38);
+  --color-gold: oklch(0.64 0.11 78);
+  --color-gold-soft: oklch(0.8 0.055 82);
+  --color-wine: oklch(0.38 0.09 24);
+  --color-olive: oklch(0.5 0.04 128);
+  --color-rose: oklch(0.76 0.045 16);
+
+  --font-serif: var(--font-libre-baskerville), "Georgia", serif;
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
+
+  --ease-out-premium: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-background text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  ::selection {
+    background-color: oklch(0.8 0.055 82 / 0.6);
+    color: oklch(0.25 0.042 36);
+  }
+}
+
+@layer components {
+  .heading-display {
+    @apply font-serif text-balance text-ink;
+    font-size: clamp(2.25rem, 6.5vw, 4.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-section {
+    @apply font-serif text-balance text-ink;
+    font-size: clamp(1.65rem, 3.8vw, 2.35rem);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+
+  .lead {
+    @apply text-pretty text-ink-muted;
+    font-size: clamp(1.0625rem, 2vw, 1.125rem);
+    line-height: 1.75;
+    max-width: 38rem;
+  }
+
+  .label-quiet {
+    @apply text-sm font-medium text-ink-muted;
+    letter-spacing: 0.01em;
+  }
+
+  .invitation-panel {
+    @apply rounded-2xl border border-gold/25 bg-surface;
+  }
+
+  .photo-frame {
+    @apply overflow-hidden rounded-xl border border-gold/20 bg-surface;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .ornament-line {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.64 0.11 78 / 0.55) 18%,
+      oklch(0.64 0.11 78 / 0.55) 82%,
+      transparent
+    );
+    height: 1px;
+  }
+
+  .section-flow {
+    @apply border-t border-gold/15;
+  }
+
+  .paper-grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
