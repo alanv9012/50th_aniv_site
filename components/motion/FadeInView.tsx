@@ -28,9 +28,9 @@ export function FadeInView({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, transform: "translateY(8px) scale(0.99)" }}
-      whileInView={{ opacity: 1, transform: "translateY(0px) scale(1)" }}
-      viewport={{ once: true, amount: 0.2 }}
+      initial={{ opacity: 0, transform: "translateY(8px)" }}
+      whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+      viewport={{ once: true, amount: 0.25 }}
       transition={{
         duration: motionDurations.reveal,
         delay,

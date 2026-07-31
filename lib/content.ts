@@ -9,41 +9,60 @@ export const siteContent = {
     label: "Bodas de Oro",
     subtitle: "Cincuenta años de matrimonio",
     dedication:
-      "Medio siglo caminando juntos, con la fe como guía y la familia como hogar.",
+      "Un camino de cincuenta años que hoy queremos celebrar junto a quienes más queremos.",
   },
   event: {
-    date: "Viernes, 16 de octubre, 2026",
+    date: "Viernes, 09 de octubre, 2026",
     time: "7:00 PM",
     venue: "Salón Jardínes Del Cedro",
     address: "Carretera Chihuahua-Aldama km 12.5, Chihuahua-Aldama, Valles de Chihuahua, 31620 Chihuahua, Chih.",
     mapsUrl: "https://maps.app.goo.gl/9zyW2zRdK7Jj6FTP6",
   },
+  dressCode: {
+    title: "Código de Vestimenta",
+    style: "Vaquero Formal",
+    gentlemen: {
+      heading: "Caballeros",
+      items: [
+        "Camisa de vestir o vaquera",
+        "Pantalón de mezclilla o vestir",
+        "Botas",
+        "Sombrero opcional",
+      ],
+    },
+    ladies: {
+      heading: "Damas",
+      items: [
+        "Vestido midi o largo",
+        "Tacones o botas",
+      ],
+    },
+  },
   invitation: {
-    headline: "Con el corazón lleno de gratitud",
+    headline: "Acompáñanos a celebrar este día tan especial",
     body: [
-      "Hace cincuenta años dimos un sí que ha florecido en amor, fe, familia y recuerdos que hoy queremos celebrar juntos.",
-      "Sería un honor contar con tu presencia en esta velada. Tu compañía llenaría de alegría a nuestra familia.",
+      "Hace cincuenta años comenzamos una aventura juntos. Hoy queremos celebrar este hermoso camino rodeados de nuestra familia y amigos.",
     ],
   },
   rsvp: {
     headline: "Confirma tu asistencia",
-    body: "Tu respuesta nos ayuda a recibirte con el cariño que mereces. Por favor avísanos si podrás acompañarnos.",
+    body: "Será una alegría celebrar juntos. Ayúdanos confirmando tu asistencia.",
     cta: "Confirmar asistencia",
     href: "#rsvp",
     mailto: "mailto:rsvp@example.com?subject=Confirmación%20Bodas%20de%20Oro",
   },
   gallery: {
     headline: "Recuerdos que atesoramos",
-    body: "Cincuenta años de vida compartida, guardados en fotografías, risas y momentos que hoy recordamos con ternura.",
+    body: "Algunos de los momentos que han marcado nuestra historia y que hoy recordamos con mucho cariño.",
   },
   location: {
     headline: "Cómo llegar",
-    body: "Nos reuniremos en un salón céntrico y de fácil acceso. Estaremos felices de recibirte.",
+    body: "Aquí celebraremos este momento tan especial. ¡Te esperamos!",
   },
   footer: {
-    closing: "Con amor y gratitud,",
+    closing: "Con mucho cariño,",
     signature: "La familia de Saul y Socorro",
-    note: "Tu presencia es el regalo que más valoramos.",
+    note: "Tu compañía será nuestro mejor regalo.",
   },
 } as const;
 

@@ -13,4 +13,4 @@ export const heroStagger = {
   delayChildren: 0.08,
 } as const;
 
-export const galleryStaggerMs = 45;
+export const galleryStaggerMs = 50;

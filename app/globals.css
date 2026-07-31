@@ -68,6 +68,29 @@
     letter-spacing: 0.01em;
   }
 
+  .timeline-track {
+    @apply relative grid grid-cols-[1.25rem_1fr] gap-x-5 sm:gap-x-7;
+  }
+
+  .timeline-marker {
+    @apply relative z-[1] mt-[0.4rem] size-2.5 shrink-0 rounded-full border border-gold bg-background;
+  }
+
+  .timeline-line {
+    @apply absolute top-[1.15rem] bottom-0 w-px bg-gold/30;
+  }
+
+  .timeline-value {
+    @apply font-serif text-ink;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  .timeline-detail {
+    @apply text-pretty text-base leading-relaxed text-ink-muted;
+  }
+
   .invitation-panel {
     @apply rounded-2xl border border-gold/25 bg-surface;
   }

@@ -1,10 +1,6 @@
-import {
-  CalendarBlank,
-  Clock,
-  MapPin,
-} from "@phosphor-icons/react/dist/ssr";
 import { siteContent } from "@/lib/content";
-import { EventDetailRow } from "./EventDetailCard";
+import { DressCode } from "./DressCode";
+import { TimelineItem } from "./EventDetailCard";
 import { Reveal } from "./motion/Reveal";
 import { Section } from "./Section";
 
@@ -18,37 +14,40 @@ export function EventDetails() {
       className="bg-surface"
       ariaLabelledby="details-heading"
     >
-      <Reveal>
-        <div className="max-w-3xl">
-          <h2 id="details-heading" className="heading-section">
-            Detalles del evento
-          </h2>
-          <p className="lead mt-4">
-            Guarda la fecha. Te esperamos para una velada de gratitud, música y
-            alegría en familia.
-          </p>
-        </div>
+      <div className="mx-auto max-w-2xl">
+        <Reveal>
+          <div className="text-center sm:text-left">
+            <h2 id="details-heading" className="heading-section">
+              Detalles del evento
+            </h2>
+            <p className="lead mx-auto mt-4 sm:mx-0">
+              Guarda la fecha. Te esperamos para una velada de gratitud, música y
+              alegría en familia.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="invitation-panel mt-10 overflow-hidden">
-          <EventDetailRow
-            icon={<CalendarBlank size={26} weight="light" aria-hidden="true" />}
-            label="Fecha"
-            value={event.date}
-          />
-          <EventDetailRow
-            icon={<Clock size={26} weight="light" aria-hidden="true" />}
+        <ol className="mt-12 list-none">
+          <TimelineItem index={0} label="Fecha" value={event.date} />
+          <TimelineItem
+            index={1}
             label="Hora"
             value={event.time}
             detail="Recepción al llegar"
           />
-          <EventDetailRow
-            icon={<MapPin size={26} weight="light" aria-hidden="true" />}
+          <TimelineItem
+            index={2}
             label="Lugar"
             value={event.venue}
             detail={event.address}
+            isLast
           />
-        </div>
-      </Reveal>
+        </ol>
+      </div>
+
+      <div className="w-full">
+        <DressCode />
+      </div>
     </Section>
   );
 }

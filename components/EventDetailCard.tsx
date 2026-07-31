@@ -1,34 +1,61 @@
-import { type ReactNode } from "react";
+"use client";
 
-type EventDetailRowProps = {
-  icon: ReactNode;
+import { motion, useReducedMotion } from "motion/react";
+import { EASE_OUT, motionDurations } from "@/lib/motion";
+
+type TimelineItemProps = {
   label: string;
   value: string;
   detail?: string;
+  isLast?: boolean;
+  /** Stagger delay index (50ms steps) */
+  index?: number;
 };
 
-export function EventDetailRow({
-  icon,
+export function TimelineItem({
   label,
   value,
   detail,
-}: EventDetailRowProps) {
-  return (
-    <div className="grid gap-4 border-b border-gold/15 px-5 py-6 last:border-b-0 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-6 sm:px-8 sm:py-7">
-      <div className="flex items-center gap-3 text-gold sm:flex-col sm:items-start sm:gap-2">
-        {icon}
-        <p className="label-quiet sm:max-w-[5rem]">{label}</p>
+  isLast = false,
+  index = 0,
+}: TimelineItemProps) {
+  const reduceMotion = useReducedMotion();
+  const delay = Math.min(index, 4) * 0.05;
+
+  const body = (
+    <>
+      <div className="relative flex justify-center" aria-hidden="true">
+        <span className="timeline-marker" />
+        {!isLast ? <span className="timeline-line" /> : null}
       </div>
-      <div>
-        <p className="font-serif text-[clamp(1.25rem,2.5vw,1.5rem)] leading-snug text-ink">
-          {value}
-        </p>
+
+      <div className={isLast ? "pb-0" : "pb-10 sm:pb-11"}>
+        <p className="label-quiet">{label}</p>
+        <p className="timeline-value mt-2">{value}</p>
         {detail ? (
-          <p className="mt-2 text-pretty text-base leading-relaxed text-ink-muted">
-            {detail}
-          </p>
+          <p className="timeline-detail mt-2 max-w-md">{detail}</p>
         ) : null}
       </div>
-    </div>
+    </>
+  );
+
+  if (reduceMotion) {
+    return <li className="timeline-track">{body}</li>;
+  }
+
+  return (
+    <motion.li
+      className="timeline-track"
+      initial={{ opacity: 0, transform: "translateY(8px)" }}
+      whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+      viewport={{ once: true, amount: 0.35 }}
+      transition={{
+        duration: motionDurations.reveal,
+        delay,
+        ease: EASE_OUT,
+      }}
+    >
+      {body}
+    </motion.li>
   );
 }
