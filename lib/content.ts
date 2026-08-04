@@ -128,7 +128,7 @@ export const galleryImages = [
   {
     src: "/images/aniv_8.jpg",
     alt: "Recuerdo de Saul y Socorro",
-    caption: "La familia completa",
+    caption: "El Sr. Saul y sus hijos",
     featured: false,
   },
   {
