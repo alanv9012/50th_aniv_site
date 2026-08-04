@@ -14,19 +14,20 @@ export const siteContent = {
   event: {
     date: "Viernes, 09 de octubre, 2026",
     time: "7:00 PM",
+    dinnerTime: "7:30 PM",
     venue: "Salón Jardínes Del Cedro",
     address: "Carretera Chihuahua-Aldama km 12.5, Chihuahua-Aldama, Valles de Chihuahua, 31620 Chihuahua, Chih.",
     mapsUrl: "https://maps.app.goo.gl/9zyW2zRdK7Jj6FTP6",
   },
   dressCode: {
     title: "Código de Vestimenta",
-    style: "Vaquero Formal",
+    style: "Formal o Vaquero",
     gentlemen: {
       heading: "Caballeros",
       items: [
         "Camisa de vestir o vaquera",
-        "Pantalón de mezclilla o vestir",
-        "Botas",
+        "Pantalón de vestir o mezclilla",
+        "Zapato o Bota",
         "Sombrero opcional",
       ],
     },
@@ -44,12 +45,24 @@ export const siteContent = {
       "Hace cincuenta años comenzamos una aventura juntos. Hoy queremos celebrar este hermoso camino rodeados de nuestra familia y amigos.",
     ],
   },
+  scripture: {
+    verse: "Te he amado con un amor eterno.",
+    reference: "Jeremías 31:3",
+  },
+  music: {
+    src: "/music/cancion.mp3",
+    title: "50 años juntos",
+    label: "The Lyrycal Lanterns",
+  },
   rsvp: {
     headline: "Confirma tu asistencia",
-    body: "Será una alegría celebrar juntos. Ayúdanos confirmando tu asistencia.",
+    body: "Será una alegría celebrar juntos. Ayúdanos confirmando tu asistencia. Porfavor indica tu nombre y el numero de asistentes.",
     cta: "Confirmar asistencia",
-    href: "#rsvp",
-    mailto: "mailto:rsvp@example.com?subject=Confirmación%20Bodas%20de%20Oro",
+    whatsappUrl:
+      "https://wa.me/526141367141?text=" +
+      encodeURIComponent(
+        "Hola, confirmo mi asistencia al aniversario.\nFamilia: \nAsistentes:",
+      ),
   },
   gallery: {
     headline: "Recuerdos que atesoramos",
@@ -68,33 +81,76 @@ export const siteContent = {
 
 export const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-    alt: "Pareja celebrando su aniversario con la familia reunida",
-    caption: "Unión y celebración",
+    src: "/images/aniv_14.jpg",
+    alt: "Manos entrelazadas de Saul y Socorro",
+    caption: "50 años de amor",
     featured: true,
   },
   {
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
-    alt: "Manos entrelazadas de una pareja mayor",
-    caption: "Manos que caminaron juntas",
+    src: "/images/aniv_1.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Juntos en el mar",
+    featured: false,
+    /** Match featured landscape framing (aniv_14) */
+    aspect: "landscape" as const,
+    objectPosition: "center",
+  },
+  {
+    src: "/images/aniv_3.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Nuestros renacuajos",
     featured: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80",
-    alt: "Mesa elegante preparada para una celebración familiar",
-    caption: "Mesas compartidas",
+    src: "/images/aniv_4.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Empezando nuestra historia",
     featured: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
-    alt: "Detalle floral en una mesa de celebración",
-    caption: "Detalles con cariño",
+    src: "/images/aniv_5.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Disfrutando de la vida",
     featured: false,
   },
   {
-    src: "https://images.unsplash.com/photo-1520854221256-174851aa1fce?auto=format&fit=crop&w=800&q=80",
-    alt: "Familia reunida en una celebración al aire libre",
-    caption: "Generaciones unidas",
+    src: "/images/aniv_6.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Compartiendo momentos en familia",
     featured: false,
+  },
+  {
+    src: "/images/aniv_7.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Llegaron los nietos",
+    featured: false,
+  },
+  {
+    src: "/images/aniv_8.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "La familia completa",
+    featured: false,
+  },
+  {
+    src: "/images/aniv_9.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Imitando a papá",
+    featured: false,
+    /** Keep heads in frame; crop legs if needed */
+    objectPosition: "center top",
+  },
+  {
+    src: "/images/aniv_10.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "En la adolesencia",
+    featured: false,
+  },
+  {
+    src: "/images/aniv_11.jpg",
+    alt: "Recuerdo de Saul y Socorro",
+    caption: "Con el preferido",
+    featured: false,
+    /** Keep heads in frame; crop legs if needed */
+    objectPosition: "center top",
   },
 ] as const;

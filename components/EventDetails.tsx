@@ -21,7 +21,7 @@ export function EventDetails() {
               Detalles del evento
             </h2>
             <p className="lead mx-auto mt-4 sm:mx-0">
-              Guarda la fecha. Te esperamos para una velada de gratitud, música y
+              Guarda la fecha. Te esperamos para una velada de llena degratitud, música y
               alegría en familia.
             </p>
           </div>
@@ -31,12 +31,17 @@ export function EventDetails() {
           <TimelineItem index={0} label="Fecha" value={event.date} />
           <TimelineItem
             index={1}
-            label="Hora"
+            label="Recepcion"
             value={event.time}
-            detail="Recepción al llegar"
+            //detail=""
           />
           <TimelineItem
             index={2}
+            label="Comida"
+            value={event.dinnerTime}
+          />
+          <TimelineItem
+            index={3}
             label="Lugar"
             value={event.venue}
             detail={event.address}

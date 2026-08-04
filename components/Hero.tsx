@@ -6,6 +6,7 @@ import { CalendarBlank, Clock } from "@phosphor-icons/react";
 import { siteContent } from "@/lib/content";
 import { EASE_OUT, heroStagger, motionDurations } from "@/lib/motion";
 import { Button } from "./Button";
+import { MusicPlayer } from "./MusicPlayer";
 
 const fadeItem = {
   hidden: { opacity: 0, transform: "translateY(12px)" },
@@ -97,6 +98,8 @@ function HeroCopy({ animate }: { animate: boolean }) {
           Ver detalles
         </Button>
       </div>
+
+      <MusicPlayer />
     </>
   );
 
@@ -190,6 +193,10 @@ function HeroCopy({ animate }: { animate: boolean }) {
           Ver detalles
         </Button>
       </motion.div>
+
+      <motion.div variants={fadeItem}>
+        <MusicPlayer />
+      </motion.div>
     </motion.div>
   );
 }
@@ -198,27 +205,23 @@ export function Hero() {
   const reduceMotion = useReducedMotion();
   const animate = !reduceMotion;
 
-  const portrait = (
-    <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-background/25 shadow-[0_24px_48px_oklch(0.2_0.04_36_/_0.35)]">
-      <Image
-        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80"
-        alt="Retrato de la pareja"
-        fill
-        className="object-cover"
-        sizes="(max-width: 1024px) 40vw, 17rem"
-      />
-    </div>
+  /** Keeps the layout column; portrait image intentionally omitted */
+  const portraitSpace = (
+    <div
+      className="relative aspect-[3/4] w-full"
+      aria-hidden="true"
+    />
   );
 
   return (
     <header className="relative min-h-[100dvh] overflow-hidden">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden bg-ink">
         <Image
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80"
+          src="/images/aniv_2.jpg"
           alt="Pareja celebrando un aniversario de bodas con la familia"
           fill
           priority
-          className="object-cover object-[center_35%]"
+          className="object-cover object-[center_55%]"
           sizes="100vw"
         />
         {reduceMotion ? (
@@ -244,11 +247,11 @@ export function Hero() {
                 animate="show"
                 variants={fadePortrait}
               >
-                {portrait}
+                {portraitSpace}
               </motion.div>
             ) : (
               <div className="mx-auto w-full max-w-[14rem] lg:mx-0 lg:max-w-[17rem]">
-                {portrait}
+                {portraitSpace}
               </div>
             )}
           </div>

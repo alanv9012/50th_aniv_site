@@ -6,14 +6,13 @@ export function InvitationMessage() {
   const { invitation } = siteContent;
 
   return (
-    <Section ariaLabelledby="invitation-heading">
+    <Section
+      ariaLabelledby="invitation-heading"
+      className="!pt-8 sm:!pt-10"
+    >
       <Reveal>
         <div className="mx-auto grid max-w-4xl gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-14">
           <div className="text-center lg:text-left">
-            <div
-              className="mx-auto mb-8 w-20 ornament-line lg:mx-0"
-              aria-hidden="true"
-            />
             <h2 id="invitation-heading" className="heading-section">
               {invitation.headline}
             </h2>

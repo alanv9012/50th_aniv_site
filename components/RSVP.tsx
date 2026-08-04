@@ -19,7 +19,7 @@ export function RSVP() {
           </h2>
           <p className="lead mx-auto mt-4">{rsvp.body}</p>
           <div className="mt-8">
-            <RSVPButton href={rsvp.mailto} external>
+            <RSVPButton href={rsvp.whatsappUrl} external>
               {rsvp.cta}
             </RSVPButton>
           </div>
