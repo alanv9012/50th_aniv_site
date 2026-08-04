@@ -21,7 +21,7 @@ export function EventDetails() {
               Detalles del evento
             </h2>
             <p className="lead mx-auto mt-4 sm:mx-0">
-              Guarda la fecha. Te esperamos para una velada de llena degratitud, música y
+              Guarda la fecha. Te esperamos para una velada llena de gratitud, música y
               alegría en familia.
             </p>
           </div>
