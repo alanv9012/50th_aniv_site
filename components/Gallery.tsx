@@ -6,6 +6,10 @@ import { Section } from "./Section";
 
 type GalleryImage = (typeof galleryImages)[number];
 
+function isNaturalFit(image: GalleryImage) {
+  return "fit" in image && image.fit === "natural";
+}
+
 function imageStyle(image: GalleryImage): { objectPosition?: string } | undefined {
   if (!("objectPosition" in image) || !image.objectPosition) return undefined;
   if (image.objectPosition === "center top") return undefined;
@@ -37,26 +41,44 @@ export function Gallery() {
       </Reveal>
 
       <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6">
-        {galleryImages.map((image, index) => (
-          <FadeInView key={image.src} index={index}>
-            <figure className="photo-frame">
-              <div className="relative aspect-[4/5]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  priority={index === 0}
-                  className={imageClassName(image)}
-                  style={imageStyle(image)}
-                  sizes="(max-width: 640px) 100vw, 45vw"
-                />
-              </div>
-              <figcaption className="px-4 py-3 text-sm text-ink-muted">
-                {image.caption}
-              </figcaption>
-            </figure>
-          </FadeInView>
-        ))}
+        {galleryImages.map((image, index) => {
+          const natural = isNaturalFit(image);
+
+          return (
+            <FadeInView
+              key={image.src}
+              index={index}
+              className={natural ? "sm:col-span-2" : undefined}
+            >
+              <figure className="photo-frame">
+                <div
+                  className={
+                    natural
+                      ? "relative aspect-[6000/3376]"
+                      : "relative aspect-[4/5]"
+                  }
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    priority={index === 0}
+                    className={imageClassName(image)}
+                    style={imageStyle(image)}
+                    sizes={
+                      natural
+                        ? "(max-width: 640px) 100vw, 90vw"
+                        : "(max-width: 640px) 100vw, 45vw"
+                    }
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm text-ink-muted">
+                  {image.caption}
+                </figcaption>
+              </figure>
+            </FadeInView>
+          );
+        })}
       </div>
     </Section>
   );

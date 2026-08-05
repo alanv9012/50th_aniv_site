@@ -130,6 +130,13 @@ export const galleryImages = [
     caption: "Los hijos",
   },
   {
+    src: "/images/aniv_15.jpg",
+    alt: "Saul y Socorro",
+    caption: "Juntos en familia",
+    /** Wide photo — keep native aspect, no portrait crop */
+    fit: "natural",
+  },
+  {
     src: "/images/aniv_14.jpg",
     alt: "Saul y Socorro abrazados",
     caption: "50 años de amor",

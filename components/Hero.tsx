@@ -221,7 +221,7 @@ export function Hero() {
           alt="Pareja celebrando un aniversario de bodas con la familia"
           fill
           priority
-          className="object-cover object-[center_55%]"
+          className="object-cover object-[center_50%]"
           sizes="100vw"
         />
         {reduceMotion ? (
